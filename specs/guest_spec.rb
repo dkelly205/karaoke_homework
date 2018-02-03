@@ -61,6 +61,12 @@ class GuestTest < MiniTest::Test
     assert_equal(1, room.playlist_count)
   end
 
+  def test_if_fav_song_is_on
+    song = Song.new("Wonderwall", "Oasis")
+    assert_equal("Whoo, I love that song", @guest.fav_song_on(song))
+  end
+
+
 
 
 end

@@ -27,6 +27,12 @@ class Guest
     room.playlist << song
   end
 
+  def fav_song_on(song)
+    if song.name == @fav_song
+      return "Whoo, I love that song"
+    end
+  end
+
 
 
 
