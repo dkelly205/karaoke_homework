@@ -9,6 +9,13 @@ class Guest
     @drink_tab = []
   end
 
-  
+  def enter_room(room)
+    if room.guest_count < room.guest_limit
+      room.number_of_guests += 1
+    end
+  end
+
+
+
 
 end
