@@ -23,6 +23,10 @@ class Guest
     @wallet -= room.entry_fee
   end
 
+  def add_song(song, room)
+    room.playlist << song
+  end
+
 
 
 

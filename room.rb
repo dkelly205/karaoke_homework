@@ -1,7 +1,7 @@
 class Room
 
-  attr_reader :name, :entry_fee, :guest_limit, :funds, :number_of_guests
-  attr_writer :number_of_guests
+  attr_reader :name, :entry_fee, :guest_limit, :funds, :number_of_guests, :playlist
+  attr_writer :number_of_guests, :playlist
 
   def initialize(name, entry_fee, guest_limit, funds)
     @name = name
@@ -14,10 +14,6 @@ class Room
 
   def guest_count
     return @number_of_guests
-  end
-
-  def add_song(song)
-    @playlist << song
   end
 
   def playlist_count
