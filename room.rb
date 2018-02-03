@@ -9,10 +9,19 @@ class Room
     @guest_limit = guest_limit
     @funds = funds
     @number_of_guests = 0
+    @playlist = []
   end
 
   def guest_count
     return @number_of_guests
+  end
+
+  def add_song(song)
+    @playlist << song
+  end
+
+  def playlist_count
+    return @playlist.count
   end
 
 end
