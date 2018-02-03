@@ -30,4 +30,14 @@ class GuestTest < MiniTest::Test
     assert_equal(1, room.guest_count)
   end
 
+  def test_leave_room
+    room = Room.new("shenanigans", 5.00, 150, 500.00 )
+    @guest.enter_room(room)
+    @guest.enter_room(room)
+    @guest.enter_room(room)
+    @guest.leave_room(room)
+    assert_equal(2, room.guest_count)
+  end
+
+
 end

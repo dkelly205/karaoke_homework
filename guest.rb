@@ -15,6 +15,10 @@ class Guest
     end
   end
 
+  def leave_room(room)
+    room.number_of_guests -= 1
+  end
+
 
 
 
