@@ -21,6 +21,7 @@ class Guest
 
   def pay_entry_fee(room)
     @wallet -= room.entry_fee
+    room.entry_till += room.entry_fee
   end
 
   def add_song(song, room)

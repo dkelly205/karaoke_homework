@@ -26,13 +26,13 @@ class GuestTest < MiniTest::Test
   end
 
   def test_enter_room
-    room = Room.new("shenanigans", 5.00, 150, 500.00 )
+    room = Room.new("shenanigans", 5.00, 150)
     @guest.enter_room(room)
     assert_equal(1, room.guest_count)
   end
 
   def test_leave_room
-    room = Room.new("shenanigans", 5.00, 150, 500.00 )
+    room = Room.new("shenanigans", 5.00, 150)
     @guest.enter_room(room)
     @guest.enter_room(room)
     @guest.enter_room(room)
@@ -41,13 +41,15 @@ class GuestTest < MiniTest::Test
   end
 
   def test_pay_entry_fee
-    room = Room.new("shenanigans", 5.00, 150, 500.00 )
+    room = Room.new("shenanigans", 5.00, 150)
     @guest.pay_entry_fee(room)
-    assert_equal(95, @guest.wallet)
+    @guest.pay_entry_fee(room)
+    assert_equal(90, @guest.wallet)
+    assert_equal(10, room.entry_till)
   end
 
   def test_guest_cannot_enter_if_guest_limit_exceeded
-    room = Room.new("shenanigans", 5.00, 1, 500.00 )
+    room = Room.new("shenanigans", 5.00, 1)
     @guest.enter_room(room)
     @guest.enter_room(room)
     @guest.enter_room(room)
@@ -56,7 +58,7 @@ class GuestTest < MiniTest::Test
 
   def test_add_song_to_playlist
     song = Song.new("Wonderwall", "Oasis")
-    room = Room.new("shenanigans", 5.00, 150, 500.00 )
+    room = Room.new("shenanigans", 5.00, 150)
     @guest.add_song(song, room)
     assert_equal(1, room.playlist_count)
   end

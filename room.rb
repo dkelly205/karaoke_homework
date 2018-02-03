@@ -1,9 +1,9 @@
 class Room
 
   attr_reader :name, :entry_fee, :guest_limit, :number_of_guests, :playlist, :entry_till
-  attr_writer :number_of_guests, :playlist
+  attr_writer :number_of_guests, :playlist, :entry_till
 
-  def initialize(name, entry_fee, guest_limit,)
+  def initialize(name, entry_fee, guest_limit)
     @name = name
     @entry_fee = entry_fee
     @guest_limit = guest_limit
@@ -22,6 +22,6 @@ class Room
 
   def entry_till
     return @entry_till
-  end 
+  end
 
 end
