@@ -45,6 +45,14 @@ class GuestTest < MiniTest::Test
     assert_equal(95, @guest.wallet)
   end
 
+  def test_guest_cannot_enter_if_guest_limit_exceeded
+    room = Room.new("shenanigans", 5.00, 1, 500.00 )
+    @guest.enter_room(room)
+    @guest.enter_room(room)
+    @guest.enter_room(room)
+    assert_equal(1, room.guest_count)
+  end
+
 
 
 end
