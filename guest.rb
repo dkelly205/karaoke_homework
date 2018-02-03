@@ -19,6 +19,11 @@ class Guest
     room.number_of_guests -= 1
   end
 
+  def pay_entry_fee(room)
+    @wallet -= room.entry_fee
+  end
+
+
 
 
 
