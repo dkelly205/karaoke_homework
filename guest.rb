@@ -6,6 +6,9 @@ class Guest
     @name = name
     @fav_song = fav_song
     @wallet = wallet
+    @drink_tab = []
   end
+
+  
 
 end
