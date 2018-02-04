@@ -11,6 +11,14 @@ class Bar
     return @drinks.count()
   end
 
+  def add_drink(drink)
+    @drinks << drink
+  end
+
+  def drink_sold(drink)
+    @drinks.delete(drink)
+  end
+
 
 
 
