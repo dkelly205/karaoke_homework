@@ -50,6 +50,10 @@ class Guest
     return sum
   end
 
+  def pay_drink_tab
+    @wallet -= drink_tab_total()
+  end
+
 
 
 

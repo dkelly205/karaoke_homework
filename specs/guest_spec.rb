@@ -83,4 +83,17 @@ class GuestTest < MiniTest::Test
     assert_equal(6.99, @guest.drink_tab_total)
   end
 
+  def test_pay_drink_tab
+    drink = Drink.new("beer", 3.00, 1)
+    @guest.order_drink(drink)
+    drink2 = Drink.new("vodka", 4.00, 1)
+    @guest.order_drink(drink2)
+    @guest.drink_tab_total
+    @guest.pay_drink_tab
+    assert_equal(93, @guest.wallet)
+  end
+
+
+
+
 end
