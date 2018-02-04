@@ -21,4 +21,5 @@ class DrinkTest < MiniTest::Test
   def test_drink_quantity
     assert_equal(1, @drink.quantity)
   end
+
 end

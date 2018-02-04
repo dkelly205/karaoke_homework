@@ -19,6 +19,10 @@ class Bar
     @drinks.delete(drink)
   end
 
+  def add_money(drink)
+    @till += drink.price
+  end
+
 
 
 
