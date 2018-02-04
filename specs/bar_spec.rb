@@ -8,11 +8,18 @@ class BarTest < MiniTest::Test
 
   def setup
     @bar = Bar.new(0)
+
   end
 
   def test_bar_till_amount
     assert_equal(0, @bar.till)
   end
+
+  def test_drink_count
+    assert_equal(0, @bar.drinks_count)
+  end
+
+
 
 
 
