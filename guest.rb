@@ -54,9 +54,4 @@ class Guest
     @wallet -= drink_tab_total()
   end
 
-
-
-
-
-
 end

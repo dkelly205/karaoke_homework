@@ -19,15 +19,9 @@ class Bar
     @drinks.delete(drink)
   end
 
-  def add_money_to_till(drink)
-    @till += drink.price
+  def add_money_to_till(drink, guest)
+    if guest.pay_drink_tab
+    @till += guest.drink_tab_total
   end
-
-
-
-
-
-
-
-
+  end
 end

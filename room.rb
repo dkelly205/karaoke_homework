@@ -25,9 +25,7 @@ class Room
   end
 
   def play_song(song)
-    # for song in @playlist
     return song.name
-    # end
   end
 
 end
