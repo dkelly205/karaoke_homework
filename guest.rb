@@ -30,9 +30,10 @@ class Guest
 
   def fav_song_on(song)
     if song.name == @fav_song
-      return "Whoo, I love that song"
+      return "Whoo, I love #{song.artist}"
     end
   end
+
 
 
 

@@ -65,7 +65,7 @@ class GuestTest < MiniTest::Test
 
   def test_if_fav_song_is_on
     song = Song.new("Wonderwall", "Oasis")
-    assert_equal("Whoo, I love that song", @guest.fav_song_on(song))
+    assert_equal("Whoo, I love Oasis", @guest.fav_song_on(song))
   end
 
 
