@@ -3,6 +3,7 @@ require('minitest/autorun')
 require_relative('../guest.rb')
 require_relative('../room.rb')
 require_relative('../song.rb')
+require_relative('../drink.rb')
 
 
 
@@ -68,7 +69,18 @@ class GuestTest < MiniTest::Test
     assert_equal("Whoo, I love Oasis", @guest.fav_song_on(song))
   end
 
+  def test_guest_can_order_drink
+    drink = Drink.new("beer", 2.99, 1)
+    @guest.order_drink(drink)
+    assert_equal(1, @guest.drinks_tab_count)
+  end
 
-
+  def test_drink_tab_total
+    drink = Drink.new("beer", 2.99, 1)
+    @guest.order_drink(drink)
+    drink2 = Drink.new("vodka", 4.00, 1)
+    @guest.order_drink(drink2)
+    assert_equal(6.99, @guest.drink_tab_total)
+  end
 
 end

@@ -36,9 +36,9 @@ class BarTest < MiniTest::Test
 
   def test_add_money
     drink = Drink.new("beer", 2.99, 1)
-    @bar.add_money(drink)
+    @bar.add_money_to_till(drink)
     drink2 = Drink.new("beer", 2.99, 1)
-    @bar.add_money(drink2)
+    @bar.add_money_to_till(drink2)
     assert_equal(5.98, @bar.till)
   end
 
